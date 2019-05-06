@@ -22,9 +22,10 @@ defmodule CircuitsLED do
 
   Questions?
 
-  1. Expose a GenServer or not?
-  2. Require users to "open" LEDs before use? I.e., is the user
-     responsible for resource management?
+  1. Expose a GenServer or not? Decided yes.
+  2. Require users to "open" LEDs before use? I.e., is the user responsible for
+     resource management? Decided yes, but since GenServer, they'll be
+     start_linking.
   """
 
   @typedoc """
@@ -76,12 +77,12 @@ defmodule CircuitsLED do
   end
 
   @doc """
-  Question -> do users open LEDs to interact with them or just
-  call the APIs below directly???
+  TODO: Refactor this to make each LED be a proper GenServer so that it can be supervised,
+  serialize multi-operation requests to Linux, and do things like blink.
   """
-  @spec open(led_spec(), keyword()) :: {:ok, led_ref} | {:error, any()}
-  def open(_led, _args \\ []) do
-    {:ok, 123}
+  @spec start_link(led_spec(), keyword()) :: GenServer.on_start()
+  def start_link(led, opts \\ []) do
+    GenServer.start_link(__MODULE__, led, opts)
   end
 
   @doc """

@@ -1,2 +1,2 @@
-defmodule CircuitsLed.GPIOServer do
+defmodule CircuitsLED.GPIOServer do
 end
