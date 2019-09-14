@@ -1,31 +1,9 @@
 defmodule CircuitsLED do
   @moduledoc """
-  Control LEDs
+  Turn LEDs on and off and more in Elixir
 
   This module provides a consistent way of controlling LEDs on devices
   running Nerves or Linux.
-
-  Use cases I'm thinking about:
-
-  1. Control `/sys/class` LEDs and GPIO LEDs using functions to make
-     things easier on users who don't know about Linux's LED subsystem.
-     Also, since it's really hard for most Nerves users (and me too) to
-     add an LED to Linux's LED subsystem, I like the idea of controlling
-     LEDs via GPIOs without going straight to `circuits_gpio`.
-  2. Blink LEDs
-  3. Combine one or more LEDs and be able to set them with a color. For
-     example, it's common to have a red, green, and blue LED in one device.
-     It would be nice to set them with one API call rather than make
-     a three separate calls
-  4. Support Linux's LED subsystems triggers so that LEDs can be
-     used for CPU, disk, and network activity.
-
-  Questions?
-
-  1. Expose a GenServer or not? Decided yes.
-  2. Require users to "open" LEDs before use? I.e., is the user responsible for
-     resource management? Decided yes, but since GenServer, they'll be
-     start_linking.
   """
 
   @typedoc """
