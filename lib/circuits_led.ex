@@ -124,7 +124,7 @@ defmodule CircuitsLED do
   @doc """
   Return true if the LED is on
   """
-  @spec is_lit(led_ref()) :: boolean()
+  @spec is_lit(led_ref()) :: false
   def is_lit(_led) do
     false
   end
