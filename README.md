@@ -1,7 +1,8 @@
 # CircuitsLED
 
-Experimenting with whether it's time to update `nerves_led`...
+[![CircleCI](https://circleci.com/gh/fhunleth/circuits_led.svg?style=svg)](https://circleci.com/gh/fhunleth/circuits_led)
 
+Experimenting with whether it's time to update `nerves_led`...
 
 ## Installation
 
