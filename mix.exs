@@ -43,7 +43,7 @@ defmodule CircuitsLED.MixProject do
 
   defp deps do
     [
-    {:circuits_gpio, "~> 0.1"},
+      {:circuits_gpio, "~> 0.1"},
       {:ex_doc, "~> 0.11", only: :docs, runtime: false},
       {:dialyxir, "~> 1.0.0-rc.6", only: :dev, runtime: false}
     ]
